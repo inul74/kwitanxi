@@ -1,4 +1,3 @@
-import { signOut } from "../utils/auth";
 import { requireUser } from "../utils/hooks";
 
 export default async function DashboardRoute() {
@@ -8,14 +7,6 @@ export default async function DashboardRoute() {
   return (
     <>
       <h1>hello from the Dashboard Route</h1>
-      <form
-        action={async () => {
-          "use server";
-          await signOut();
-        }}
-      >
-        <button type="submit">Sign Out</button>
-      </form>
     </>
   );
 }
