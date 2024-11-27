@@ -80,10 +80,10 @@ export async function createInvoice(prevState: any, formData: FormData) {
     template_variables: {
       clientName: submission.value.clientName,
       invoiceNumber: submission.value.invoiceNumber,
-      invoiceDueDate: new Intl.DateTimeFormat("id-ID", {
+      dueDate: new Intl.DateTimeFormat("id-ID", {
         dateStyle: "long",
       }).format(new Date(submission.value.date)),
-      invoiceAmount: formatCurrency({
+      totalAmount: formatCurrency({
         amount: submission.value.total,
         currency: submission.value.currency as any,
       }),
@@ -146,10 +146,10 @@ export async function editInvoice(prevState: any, formData: FormData) {
     template_variables: {
       clientName: submission.value.clientName,
       invoiceNumber: submission.value.invoiceNumber,
-      invoiceDueDate: new Intl.DateTimeFormat("id-ID", {
+      dueDate: new Intl.DateTimeFormat("id-ID", {
         dateStyle: "long",
       }).format(new Date(submission.value.date)),
-      invoiceAmount: formatCurrency({
+      totalAmount: formatCurrency({
         amount: submission.value.total,
         currency: submission.value.currency as any,
       }),
